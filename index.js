@@ -36,19 +36,19 @@ function renderPost(post) {
             <div class="oldagram-content">
                 <div class="thumbnail">
                     <div class="thumbnail-content">
-                        <img src="${post.avatar}" class="user-avatar">
+                        <img src="${post.avatar}" class="user-avatar" onerror="this.src='images/placeholder-avatar.png'">
                         <div>
                             <h2 class="name">${post.name}</h2>
                             <p class="location">${post.location}</p>
                         </div>
                     </div>
 
-                    <img src="${post.post}" class="selfie-img" ondblclick="handleLike(${posts.indexOf(post)})">
+                    <img src="${post.post}" class="selfie-img" ondblclick="handleLike(${posts.indexOf(post)})" onerror="this.src='images/placeholder-post.png'">
 
                     <div class="thumbnail-icons">
-                        <img class="thmb-social-icon" src="images/icon-heart.png" onclick="handleLike(${posts.indexOf(post)})">
-                        <img class="thmb-social-icon" src="images/icon-comment.png">
-                        <img class="thmb-social-icon" src="images/icon-dm.png">
+                        <img class="thmb-social-icon" src="images/icon-heart.png" onclick="handleLike(${posts.indexOf(post)})" onerror="this.style.display='none'">
+                        <img class="thmb-social-icon" src="images/icon-comment.png" onerror="this.style.display='none'">
+                        <img class="thmb-social-icon" src="images/icon-dm.png" onerror="this.style.display='none'">
                     </div>
 
                     <p class="post-likes">${post.likes.toLocaleString()} likes</p>
